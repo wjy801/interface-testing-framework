@@ -1,0 +1,10 @@
+-
+  feature: 核心模块
+  story: 获取用户信息
+  title: 1
+  request:
+    method: "get"
+    url: http://127.0.0.1:8000/
+  validate:
+    equals:
+      断言状态码为200: [200,status_code]

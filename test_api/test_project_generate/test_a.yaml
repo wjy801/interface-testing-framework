@@ -1,0 +1,16 @@
+-
+  feature: 核心模块
+  story: 获取用户信息
+  title: 2
+  request:
+    method: "get"
+    url: ${env(test_base_url)}/users/2
+  validate:
+    equals:
+      断言状态码为200: [200,status_code]
+    contains:
+      断言包含有data: [data,text]
+#    db_equals:
+#      判断返回结果中包含sql查询的内容: ["select name from user where id =4",text ]
+    db_contains:
+      判断返回结果中包含sql查询的内容: ["select name from user where id =3",text ]

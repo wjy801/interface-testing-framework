@@ -1,0 +1,15 @@
+-
+  feature: 数据驱动
+  story: 获取用户信息
+  title: 1
+  request:
+    method: "get"
+    url: ${env(test_base_url)}/users/$ddt{id}
+  parametrize:
+    - ["id"]
+    - [2]
+    - [3]
+    - ["4"]
+  validate:
+#    equals:
+#      断言状态码为200: [200,status_code]

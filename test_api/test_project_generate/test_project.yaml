@@ -1,0 +1,19 @@
+-
+  feature: 核心模块
+  story: 获取用户信息
+  title: 3
+  request:
+    method: get
+    url: ${env(test_base_url)}/users/${get_number()}
+  extract:
+    date: [headers,"$.date",0]
+  validate: null
+
+-
+  feature: 核心模块
+  story: 获取系统状态信息
+  title: 获取系统状态信息
+  request:
+    method: get
+    url: ${env(test_base_url)}/status
+  validate: null

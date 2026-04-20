@@ -1,0 +1,41 @@
+13:31:07 - test_all_case.py - INFO - YAML测试用例路径D:\Code\Python\wjy\test_api\test_project_generate\b.yaml
+13:31:07 - main_util.py - INFO - 模块>接口>用例:数据驱动>获取用户信息>1
+13:31:07 - requests_util.py - INFO - 请求method参数:get
+13:31:07 - requests_util.py - INFO - 请求url参数:http://localhost:8888/users/2
+13:31:09 - requests_util.py - INFO - 相应内容:{'status': 200, 'data': {'id': 2, 'name': '用户2', 'email': 'user2@example.com'}}
+13:31:09 - main_util.py - WARNING - 此用例没有断言
+
+13:31:09 - test_all_case.py - INFO - YAML测试用例路径D:\Code\Python\wjy\test_api\test_project_generate\b.yaml
+13:31:09 - main_util.py - INFO - 模块>接口>用例:数据驱动>获取用户信息>1
+13:31:09 - requests_util.py - INFO - 请求method参数:get
+13:31:09 - requests_util.py - INFO - 请求url参数:http://localhost:8888/users/3
+13:31:09 - requests_util.py - INFO - 相应内容:{'status': 200, 'data': {'id': 3, 'name': '用户3', 'email': 'user3@example.com'}}
+13:31:09 - main_util.py - WARNING - 此用例没有断言
+
+13:31:09 - test_all_case.py - INFO - YAML测试用例路径D:\Code\Python\wjy\test_api\test_project_generate\b.yaml
+13:31:09 - main_util.py - INFO - 模块>接口>用例:数据驱动>获取用户信息>1
+13:31:09 - requests_util.py - INFO - 请求method参数:get
+13:31:09 - requests_util.py - INFO - 请求url参数:http://localhost:8888/users/'4'
+13:31:09 - requests_util.py - INFO - 相应内容:{'detail': [{'type': 'int_parsing', 'loc': ['path', 'user_id'], 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': "'4'"}]}
+13:31:09 - main_util.py - WARNING - 此用例没有断言
+
+13:31:09 - test_all_case.py - INFO - YAML测试用例路径D:\Code\Python\wjy\test_api\test_project_generate\test_a.yaml
+13:31:09 - main_util.py - INFO - 模块>接口>用例:核心模块>获取用户信息>2
+13:31:09 - requests_util.py - INFO - 请求method参数:get
+13:31:09 - requests_util.py - INFO - 请求url参数:http://localhost:8888/users/2
+13:31:09 - requests_util.py - INFO - 相应内容:{'status': 200, 'data': {'id': 2, 'name': '用户2', 'email': 'user2@example.com'}}
+13:31:09 - main_util.py - INFO - 断言成功
+
+13:31:09 - test_all_case.py - INFO - YAML测试用例路径D:\Code\Python\wjy\test_api\test_project_generate\test_project.yaml
+13:31:09 - main_util.py - INFO - 模块>接口>用例:核心模块>获取用户信息>3
+13:31:09 - requests_util.py - INFO - 请求method参数:get
+13:31:09 - requests_util.py - INFO - 请求url参数:http://localhost:8888/users/1771133469
+13:31:09 - requests_util.py - INFO - 相应内容:{'status': 200, 'data': {'id': 1771133469, 'name': '用户1771133469', 'email': 'user1771133469@example.com'}}
+13:31:09 - main_util.py - WARNING - 此用例没有断言
+
+13:31:09 - main_util.py - INFO - 模块>接口>用例:核心模块>获取系统状态信息>获取系统状态信息
+13:31:09 - requests_util.py - INFO - 请求method参数:get
+13:31:09 - requests_util.py - INFO - 请求url参数:http://localhost:8888/status
+13:31:09 - requests_util.py - INFO - 相应内容:{'status': 200, 'data': {'status': 'running', 'timestamp': '2026-01-26T20:03:36.343570', 'version': '1.0.0'}}
+13:31:09 - main_util.py - WARNING - 此用例没有断言
+
