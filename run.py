@@ -20,9 +20,9 @@ if __name__ == '__main__':
         os.environ.pop("CASE_TARGET", None)
     pytest.main(["-s", "./test_api/case.py"])
     # 生成并打开allure报告
-    # time.sleep(3)
-    # os.system("allure generate ./temps -o ./reports --clean")
-    # # os.system("allure open ./reports")
-    #
-    # # 复制日志文件
-    # shutil.move("logs/frame.log","logs/frame_"+str(int(time.time()))+".log")
+    time.sleep(3)
+    os.system("allure generate ./temps -o ./reports --clean")
+    # os.system("allure open ./reports")
+
+    # 复制日志文件
+    shutil.move("logs/frame.log","logs/frame_"+str(int(time.time()))+".log")
