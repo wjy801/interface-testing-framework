@@ -8,7 +8,8 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     filename=str(LOG_FILE),
-    encoding="utf-8",
+    # Use UTF-8 BOM to improve browser charset detection on Jenkins artifacts.
+    encoding="utf-8-sig",
     force=True,
 )
 
