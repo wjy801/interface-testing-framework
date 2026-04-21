@@ -40,6 +40,7 @@ def collect_yaml_cases():
             break
 
     if resolved_path is None:
+        logger.error("没有找到要执行的用例文件")
         raise FileNotFoundError(f"未找到要执行的目录或文件: {case_target}")
 
     if resolved_path.is_file():

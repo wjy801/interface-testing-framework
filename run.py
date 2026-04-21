@@ -1,7 +1,9 @@
+import logging
 import os
+from pathlib import Path
 import shutil
-import time
 import sys
+import time
 
 import pytest
 
@@ -10,6 +12,28 @@ def get_case_target():
     if len(sys.argv) > 1:
         return sys.argv[1].strip()
     return ""
+
+
+def rotate_log_file():
+    src = Path("logs/frame.log")
+    if not src.exists():
+        return
+
+    dst = src.with_name(f"frame_{int(time.time())}.log")
+
+    # Release FileHandler locks before moving logs on Windows.
+    logging.shutdown()
+
+    last_error = None
+    for _ in range(10):
+        try:
+            shutil.move(str(src), str(dst))
+            return
+        except PermissionError as exc:
+            last_error = exc
+            time.sleep(0.2)
+
+    raise last_error
 
 
 if __name__ == '__main__':
@@ -25,4 +49,4 @@ if __name__ == '__main__':
     # os.system("allure open ./reports")
 
     # 复制日志文件
-    shutil.move("logs/frame.log","logs/frame_"+str(int(time.time()))+".log")
+    rotate_log_file()

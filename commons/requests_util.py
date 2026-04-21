@@ -25,9 +25,9 @@ class RequestUtil:
         res = RequestUtil.sess.request(**kwargs)
         # 判断返回的内容是否是一个json格式
         if "json" in res.headers.get("Content-Type"):
-            logger.info("相应内容:%s"%res.json())
+            logger.info("响应内容:%s"%res.json())
         else:
-            logger.info("响应内容不做书写") # 日志写入
+            logger.info("响应内容不做书写")
         return res
 if __name__ == '__main__':
     requests.get()
