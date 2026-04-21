@@ -7,7 +7,7 @@ import pytest
 from commons.ddt_util import read_testcase
 from commons.main_util import stand_case_flow
 from commons.model_util import verify_yaml
-from commons.requests_util import logger
+from commons.log import logger
 
 
 @allure.epic("项目名称：wjy的接口测试")

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 import yaml
 
-from commons.requests_util import logger
+from commons.log import logger
 from commons.yaml_util import read_testcase, read_yaml
 
 

@@ -4,8 +4,9 @@ import pytest
 
 from commons.assert_util import AssertUtil
 from commons.extract_util import ExtractUtil
+from commons.log import logger
 from commons.model_util import CaseInfo
-from commons.requests_util import RequestUtil, logger
+from commons.requests_util import RequestUtil
 
 
 def stand_case_flow(caseinfo: CaseInfo):
@@ -31,4 +32,3 @@ def stand_case_flow(caseinfo: CaseInfo):
             print("此用例没有断言")
     except Exception:
         logger.error("断言失败：%s\n"%str(traceback.format_exc())) # 添加失败消息
-

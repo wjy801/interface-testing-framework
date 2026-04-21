@@ -1,11 +1,8 @@
-import logging
-
 import requests
+from commons.log import logger
 
 
 
-# 生成日志对象
-logger = logging.getLogger(__name__)
 
 # 统一请求封装
 class RequestUtil:
