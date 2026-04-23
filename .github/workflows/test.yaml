@@ -13,11 +13,36 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: astral/uv:python3.12-bookworm-slim
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
-      - name: Install
-        run: uv sync
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          grep -vi '^pywin32==' requirements.txt > requirements-ci.txt
+          python -m pip install -r requirements-ci.txt
+      - name: Start local test server
+        run: python -m http.server 8000 >/tmp/test-server.log 2>&1 &
+      - name: Wait for local test server
+        run: |
+          for i in {1..20}; do
+            python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000').read(); print('server ready')" && exit 0
+            sleep 1
+          done
+          cat /tmp/test-server.log
+          exit 1
       - name: Test
-        run: uv run run.py test_fastapi
+        run: python run.py test_fastapi
+      - name: Upload test artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifacts
+          path: |
+            temps
+            reports
+            logs
